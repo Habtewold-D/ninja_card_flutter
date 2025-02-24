@@ -4,9 +4,15 @@ void main() {
   runApp(MaterialApp(home: Ninja()));
 }
 
-class Ninja extends StatelessWidget {
+class Ninja extends StatefulWidget {
   const Ninja({super.key});
 
+  @override
+  State<Ninja> createState() => _NinjaState();
+}
+
+class _NinjaState extends State<Ninja> {
+  int ninjaLevel = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +24,7 @@ class Ninja extends StatelessWidget {
         foregroundColor: Colors.white,
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        padding: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -44,7 +50,7 @@ class Ninja extends StatelessWidget {
               style: TextStyle(color: Colors.grey, fontSize: 15.0),
             ),
             Text(
-              '10',
+              '$ninjaLevel',
               style: TextStyle(
                 color: Colors.amber,
                 fontSize: 40.0,
