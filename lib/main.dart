@@ -1,26 +1,69 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(home: Ninja()));
 }
 
-class MyApp extends StatelessWidget {
+class Ninja extends StatelessWidget {
+  const Ninja({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.grey[200],
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text('Hello World'),
-          foregroundColor: Colors.white,
-          backgroundColor: Colors.grey[850],
-        ),
-        body: Image(image: AssetImage('images/download.jpg')),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.add),
-          backgroundColor: Colors.red[600],
+    return Scaffold(
+      backgroundColor: Colors.grey[900],
+      appBar: AppBar(
+        title: Text('Ninja ID Card'),
+        centerTitle: true,
+        backgroundColor: Colors.grey[850],
+        foregroundColor: Colors.white,
+      ),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('images/download.jpg'),
+                radius: 60.0,
+              ),
+            ),
+            SizedBox(height: 60.0),
+            Text('Name', style: TextStyle(color: Colors.grey, fontSize: 15.0)),
+            Text(
+              'Hab',
+              style: TextStyle(
+                color: Colors.amber,
+                fontSize: 40.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Text(
+              'CURRENT NINJA LEVEL',
+              style: TextStyle(color: Colors.grey, fontSize: 15.0),
+            ),
+            Text(
+              '10',
+              style: TextStyle(
+                color: Colors.amber,
+                fontSize: 40.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Row(
+              children: [
+                Icon(Icons.email, color: Colors.grey, size: 30.0),
+                SizedBox(width: 10.0),
+
+                Text(
+                  'hab@gmail.com',
+                  style: TextStyle(color: Colors.grey, fontSize: 20.0),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
