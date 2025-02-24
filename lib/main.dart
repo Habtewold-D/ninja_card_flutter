@@ -21,7 +21,17 @@ class _NinjaState extends State<Ninja> {
         title: Text('Ninja ID Card'),
         centerTitle: true,
         backgroundColor: Colors.grey[850],
-        foregroundColor: Colors.white,
+        foregroundColor: Colors.grey,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            ninjaLevel += 1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[800],
+        foregroundColor: Colors.grey[400],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 0.0),
